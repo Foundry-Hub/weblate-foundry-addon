@@ -1,0 +1,1 @@
+"""Weblate Foundry Hub addon."""
