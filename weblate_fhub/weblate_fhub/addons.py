@@ -16,7 +16,7 @@ class AddFoundryLanguage(BaseScriptAddon):
     # Name of the addon, has to be unique
     name = "weblate.foundryhub.foundryhub"
     # Verbose name and long descrption
-    verbose = _("Foundry VTT Translation!")
+    verbose = _("Foundry VTT Integration")
     description = _("Add a new language entry in the manifest.json file when a new language is added.")
 
     settings_form = FoundryCustomizeForm
