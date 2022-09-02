@@ -66,4 +66,5 @@ class AddFoundryLanguage(BaseScriptAddon):
             json.dump(manifest_obj, f, indent=4, ensure_ascii=False)
 
         os.replace(tempfile, manifest_fullpath)
+        target.repository.execute(["add", manifest_fullpath])
         return
