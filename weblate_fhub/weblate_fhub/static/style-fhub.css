@@ -1,11 +1,11 @@
-.announcement.alter-info {
+.announcement.alert-info {
     background-color: none;
     color:#2a3744;
 }
 
-.announcement.alter-info h3{
+.announcement.alert-info h3{
     font-size: 20px;
 }
-.announcement.alter-info p{
+.announcement.alert-info p{
     margin-left: 10px;
 }
