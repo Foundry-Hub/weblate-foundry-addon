@@ -51,6 +51,18 @@ class AddFoundryLanguage(BaseScriptAddon):
 
         manifest_fullpath = target.full_path + "/" + manifest
 
+        # Get JSON indent format
+        dump_indent = 4
+        for addon in target.addons_cache["__all__"]:
+            if addon.name == 'weblate.json.customize':
+                configJSON = addon.configuration
+                style = configJSON.get("style", "spaces")
+                indent = int(configJSON.get("indent", 4))
+                if style == "spaces":
+                    dump_indent = indent
+                else:
+                    dump_indent = "\t" * indent
+
         with io.open(manifest_fullpath, mode='r', encoding='utf-8') as f:
             manifest_obj = json.load(f)
             src_path = manifest_obj['languages'][0]['path']
@@ -63,7 +75,7 @@ class AddFoundryLanguage(BaseScriptAddon):
 
         tempfile = os.path.join(os.path.dirname(manifest_fullpath), str(uuid.uuid4()))
         with io.open(tempfile, mode='w', encoding='utf-8') as f:
-            json.dump(manifest_obj, f, indent=4, ensure_ascii=False)
+            json.dump(manifest_obj, f, indent=dump_indent, ensure_ascii=False)
 
         os.replace(tempfile, manifest_fullpath)
         target.repository.execute(["add", manifest_fullpath])
