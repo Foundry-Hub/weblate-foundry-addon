@@ -45,6 +45,8 @@ class AddFoundryLanguage(BaseScriptAddon):
         if new_code in foundryvtt_code:
             new_code = foundryvtt_code[new_code]
 
+        new_code = new_code.replace("_", "-")
+
         activate(translation.language_code)
         new_name = gettext(translation.language.name)
         deactivate()
