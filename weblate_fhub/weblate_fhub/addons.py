@@ -37,6 +37,7 @@ class AddFoundryLanguage(BaseScriptAddon):
         foundryvtt_code = {
             "zh-rTW" : "zh-TW",
             "pt" : "pt-BR",
+            "pt_BR" : "pt-BR",
             "zh-rCN" : "cn"
         }
 
