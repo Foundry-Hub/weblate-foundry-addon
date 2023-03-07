@@ -38,7 +38,8 @@ class AddFoundryLanguage(BaseScriptAddon):
             "zh-rTW" : "zh-TW",
             "pt" : "pt-BR",
             "pt_BR" : "pt-BR",
-            "zh-rCN" : "cn"
+            "zh-rCN" : "cn",
+            "zh-Hans" : "cn"
         }
 
         new_code = translation.language_code
